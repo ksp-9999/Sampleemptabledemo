@@ -1,0 +1,76 @@
+<div class="row">
+    <div class="col-md-12">
+        <h3 class="text-center">Employee</h3>
+    </div>
+</div>
+<div class="">
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <td>Employee Id</td>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Salary</td>
+                <td>DOB</td>
+                <td>Email</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let emp of employeeList"  appColor>
+                <td>
+                    <div *ngIf="!showEdit">{{emp.EmployeeId}}</div>
+                    <div *ngIf="showEdit">
+                        <input type="text" class="form-control" [(ngModel)]="emp.EmployeeId">
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="!showEdit">
+                        {{emp.FirstName}}
+                    </div>
+                    <div *ngIf="showEdit">
+                        <input type="text" class="form-control" [(ngModel)]="emp.FirstName">
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="!showEdit">
+                        {{emp.LastName}}
+                    </div>
+                    <div *ngIf="showEdit">
+                        <input type="text" class="form-control" [(ngModel)]="emp.LastName">
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="!showEdit">
+                        {{emp.salary}}
+                    </div>
+                    <div *ngIf="showEdit">
+                        <input type="text" class="form-control" [(ngModel)]="emp.salary">
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="!showEdit">
+                        {{emp.Dob}}
+                    </div>
+                    <div *ngIf="showEdit">
+                        <input type="text" class="form-control" [(ngModel)]="emp.Dob">
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="!showEdit">
+                        {{emp.Email}}
+                    </div>
+                    <div *ngIf="showEdit">
+                        <input type="text" class="form-control" [(ngModel)]="emp.Email">
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="!showEdit"><button class="btn btn-primary" (click)="EditEmp()">Edit</button></div>
+                    <div *ngIf="showEdit">
+                        <button class="btn btn-primary btn-sm" (click)="UpdateEmp()">Update</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
